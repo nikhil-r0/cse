@@ -1,0 +1,36 @@
+word = "zxabc"
+numFriends = 2
+
+z xabc
+zx abc
+zxa bc
+zxab c
+here zxab is the answer, and according to the approach I suggested, first 
+	maxlen = len of string - numFriends + 1
+	maxlen = 5 - 2 + 1
+	maxlen = 4
+	
+so then find the letter last in the order alphabetically
+that would be z.
+Now get the maximum split from z with len <= maxlen
+thats zxab the answer.
+
+word = "aaabac"
+numFriends = 3
+
+a a abac
+aa a bac
+aaa b ac
+aaab a c
+a aa bac
+a aab ac
+a aaba c
+
+clearly the largest lexalogically is c (I am not sure, might be wrong)
+SO here after calculating 
+	maxlen = 6 - 3 + 1
+	maxlen = 4
+Now find the largest letter, which is c
+Now get the largest split from c with len <= maxlen
+which is still c, so this is probably the answer
+
