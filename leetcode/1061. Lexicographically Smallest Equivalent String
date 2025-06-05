@@ -1,0 +1,38 @@
+s1[i] = 'b' and s2[i] = 'd'
+
+in hasmap h
+'b' = 'b'
+'d' = 'd'
+after the above info I would change because 'b' < 'd'
+'b' = 'b'
+'d' = 'b'
+
+s1[i] = 'd' and s2[i] = 'a'
+Now I would recursively change for all until one of them is pointing to themselves.
+so first 'd' = 'b' and 'a' < 'b' go to 'b'
+'b' ='b' we get to the base condition, it could be a while loop too instead of recursion
+'b' = 'a'
+then 'd' = 'a'
+Would also need to check for those letters that are eqaul to 'd' to change to 'a' in the previous step itself.
+1. Check is the current equivalent letter is greater than the suggested one
+2. If yes then for all the letters which are equal to the older value on either the index or the value side must be changed to the new value, this will involve a recursive call for current value of it, here 'b' and all those that equal 'd'
+
+The basestring is just looked up for each letter from the hashmap and changed.
+
+
+s1 = "abc", s2 = "cde", baseStr = "eed"
+Expected Output: "aab"
+
+a b c d e
+a b c d e
+a b a d e
+a b a b e
+a b a b a
+
+s1 = "abc", s2 = "bcd", baseStr = "cad"
+Expected Output: "aaa"
+
+a b c d
+a a c d
+a a a d
+a a a a
